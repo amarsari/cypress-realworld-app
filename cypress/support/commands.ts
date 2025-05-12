@@ -50,6 +50,7 @@ Cypress.Commands.add("login", (username, password, { rememberUser = false } = {}
   });
 
   cy.intercept("POST", "/login").as("loginUser");
+  
   cy.intercept("GET", "checkAuth").as("getUserProfile");
 
   cy.location("pathname", { log: false }).then((currentPath) => {
