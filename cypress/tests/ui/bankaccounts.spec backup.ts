@@ -68,7 +68,7 @@ describe("Bank Accounts", function () {
       .should("contain", "The Best Bank");
     cy.visualSnapshot("Bank Account Created");
   });
-
+//continue from here:
   it("should display bank account form errors", function () {
     cy.visit("/bankaccounts");
     cy.getBySel("bankaccount-new").click();

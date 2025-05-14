@@ -253,6 +253,17 @@
       "isDeleted": false,
       "createdAt": "2024-01-26T14:01:01.815Z",
       "modifiedAt": "2024-03-07T08:44:31.174Z"
+    },
+    {
+      "id": "wqXUY7Vmv",
+      "uuid": "633e36c9-cfaa-4db3-83cc-c358dd6f9b8e",
+      "userId": "uBmeaz5pX",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": false,
+      "createdAt": "2025-05-14T20:39:04.282Z",
+      "modifiedAt": "2025-05-14T20:39:04.282Z"
     }
   ],
   "transactions": [
