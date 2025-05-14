@@ -118,7 +118,7 @@ describe("User Sign-up and Login", () => {
     cy.visualSnapshot("Sign In Submit Disabled")
   })
 
-  it.only("Should display sign up errors", () => {
+  it("Should display sign up errors", () => {
     cy.intercept("GET", "/signup")
 
     cy.visit("/signup")
@@ -144,6 +144,20 @@ describe("User Sign-up and Login", () => {
 
   })
 
-  
+  it("Should display error for an invalid user", () => {
+    cy.login("invalidUserName", "invalidPa$$word")
+
+    cy.getBySel("signin-error").should("be.visible").and("have.text", "Username or password is invalid")
+    cy.visualSnapshot("Sign In, Invalid Username and Password, Username or Password is Invalid")
+  })
+
+  it("Should display error for an invalid password for existing user", () => {
+    cy.database("find", "users").then((user: User) => {
+      cy.login(user.username, "INVALID")
+    })
+
+    cy.getBySel("signin-error").should("be.visible").and("have.text", "Username or password is invalid")
+    cy.visualSnapshot("Sign In, Invalid Username, Username or Password is Invalid")
+  })
 
 })
